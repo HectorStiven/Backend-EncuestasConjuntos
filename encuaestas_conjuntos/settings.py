@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,40 +81,41 @@ WSGI_APPLICATION = 'encuaestas_conjuntos.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-# CREDENCIALES PARA DB LOCAL
-ENCUESTAS_DB_HOST = 'viaduct.proxy.rlwy.net'  # Aquí debes poner la dirección real del host de tu base de datos
-ENCUESTAS_DB_NAME = 'railway'
-ENCUESTAS_DB_PASSWORD = 'ywRqaEthyBunUUQcjsdbzcFRVgmzBMKz'
-ENCUESTAS_DB_PORT = '13480'  # El puerto debe ser un string
-ENCUESTAS_DB_USER = 'postgres'
+# # CREDENCIALES PARA DB LOCAL
+# ENCUESTAS_DB_HOST = 'viaduct.proxy.rlwy.net'  # Aquí debes poner la dirección real del host de tu base de datos
+# ENCUESTAS_DB_NAME = 'railway'
+# ENCUESTAS_DB_PASSWORD = 'ywRqaEthyBunUUQcjsdbzcFRVgmzBMKz'
+# ENCUESTAS_DB_PORT = '13480'  # El puerto debe ser un string
+# ENCUESTAS_DB_USER = 'postgres'
 
 
-# Resto de la configuración de Django...
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': ENCUESTAS_DB_NAME,
-        'USER': ENCUESTAS_DB_USER,
-        'PASSWORD': ENCUESTAS_DB_PASSWORD,
-        'HOST': ENCUESTAS_DB_HOST,
-        'PORT': ENCUESTAS_DB_PORT,
-    }
-}
-
-
-
+# # Resto de la configuración de Django...
 
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': os.getenv('ENCUESTAS_DB_NAME'),
-#         'USER': os.getenv('ENCUESTAS_DB_USER'),
-#         'PASSWORD': os.getenv('ENCUESTAS_DB_PASSWORD'),
-#         'HOST': os.getenv('ENCUESTAS_DB_HOST'),
-#         'PORT': os.getenv('ENCUESTAS_DB_PORT'),
+#         'NAME': ENCUESTAS_DB_NAME,
+#         'USER': ENCUESTAS_DB_USER,
+#         'PASSWORD': ENCUESTAS_DB_PASSWORD,
+#         'HOST': ENCUESTAS_DB_HOST,
+#         'PORT': ENCUESTAS_DB_PORT,
 #     }
 # }
+
+
+load_dotenv()
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('ENCUESTAS_DB_NAME'),
+        'USER': os.getenv('ENCUESTAS_DB_USER'),
+        'PASSWORD': os.getenv('ENCUESTAS_DB_PASSWORD'),
+        'HOST': os.getenv('ENCUESTAS_DB_HOST'),
+        'PORT': os.getenv('ENCUESTAS_DB_PORT'),
+    }
+}
 
 
 

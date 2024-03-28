@@ -139,7 +139,9 @@ class ActualizarT003DatosConjuntoVista(generics.UpdateAPIView):
         instance = self.get_object()  # Obtiene la instancia existente
         serializer = self.get_serializer(instance, data=request.data, partial=kwargs.get('partial', False))
         serializer.is_valid(raise_exception=True)  # Valida los datos
-        serializer.save
+        serializer.save()  # Guarda los datos
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 
