@@ -79,37 +79,54 @@ WSGI_APPLICATION = 'encuaestas_conjuntos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# # CREDENCIALES PARA DB LOCAL
-# ENCUESTAS_DB_HOST = 'localhost'
-# ENCUESTAS_DB_NAME = 'dbencuestasconjuntos'
-# ENCUESTAS_DB_PASSWORD = '0606'
-# ENCUESTAS_DB_PORT = '5432'
-# ENCUESTAS_DB_USER = 'postgres'
 
-# # Resto de la configuración de Django...
+# CREDENCIALES PARA DB LOCAL
+ENCUESTAS_DB_HOST =viaduct.proxy.rlwy.net
+ENCUESTAS_DB_NAME =railway
+ENCUESTAS_DB_PASSWORD =ywRqaEthyBunUUQcjsdbzcFRVgmzBMKz
+ENCUESTAS_DB_PORT =13480
+ENCUESTAS_DB_USER =postgres
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': ENCUESTAS_DB_NAME,
-#         'USER': ENCUESTAS_DB_USER,
-#         'PASSWORD': ENCUESTAS_DB_PASSWORD,
-#         'HOST': ENCUESTAS_DB_HOST,
-#         'PORT': ENCUESTAS_DB_PORT,
-#     }
-# }
 
+# Resto de la configuración de Django...
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('ENCUESTAS_DB_NAME'),
-        'USER': os.getenv('ENCUESTAS_DB_USER'),
-        'PASSWORD': os.getenv('ENCUESTAS_DB_PASSWORD'),
-        'HOST': os.getenv('ENCUESTAS_DB_HOST'),
-        'PORT': os.getenv('ENCUESTAS_DB_PORT'),
+        'NAME': ENCUESTAS_DB_NAME,
+        'USER': ENCUESTAS_DB_USER,
+        'PASSWORD': ENCUESTAS_DB_PASSWORD,
+        'HOST': ENCUESTAS_DB_HOST,
+        'PORT': ENCUESTAS_DB_PORT,
     }
 }
+
+
+
+# Resto de la configuración de Django...
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': ENCUESTAS_DB_NAME,
+        'USER': ENCUESTAS_DB_USER,
+        'PASSWORD': ENCUESTAS_DB_PASSWORD,
+        'HOST': ENCUESTAS_DB_HOST,
+        'PORT': ENCUESTAS_DB_PORT,
+    }
+}
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': os.getenv('ENCUESTAS_DB_NAME'),
+#         'USER': os.getenv('ENCUESTAS_DB_USER'),
+#         'PASSWORD': os.getenv('ENCUESTAS_DB_PASSWORD'),
+#         'HOST': os.getenv('ENCUESTAS_DB_HOST'),
+#         'PORT': os.getenv('ENCUESTAS_DB_PORT'),
+#     }
+# }
 
 
 
