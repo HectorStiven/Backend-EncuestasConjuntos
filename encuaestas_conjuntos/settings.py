@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'encuaestas_conjuntos.wsgi.application'
 
 
 # CREDENCIALES PARA DB LOCAL
-ENCUESTAS_DB_HOST =viaduct.proxy.rlwy.net
-ENCUESTAS_DB_NAME =railway
-ENCUESTAS_DB_PASSWORD =ywRqaEthyBunUUQcjsdbzcFRVgmzBMKz
-ENCUESTAS_DB_PORT =13480
-ENCUESTAS_DB_USER =postgres
+ENCUESTAS_DB_HOST = 'viaduct.proxy.rlwy.net'  # Aquí debes poner la dirección real del host de tu base de datos
+ENCUESTAS_DB_NAME = 'railway'
+ENCUESTAS_DB_PASSWORD = 'ywRqaEthyBunUUQcjsdbzcFRVgmzBMKz'
+ENCUESTAS_DB_PORT = '13480'  # El puerto debe ser un string
+ENCUESTAS_DB_USER = 'postgres'
 
 
 # Resto de la configuración de Django...
@@ -102,19 +102,6 @@ DATABASES = {
 }
 
 
-
-# # Resto de la configuración de Django...
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': ENCUESTAS_DB_NAME,
-#         'USER': ENCUESTAS_DB_USER,
-#         'PASSWORD': ENCUESTAS_DB_PASSWORD,
-#         'HOST': ENCUESTAS_DB_HOST,
-#         'PORT': ENCUESTAS_DB_PORT,
-#     }
-# }
 
 
 # DATABASES = {
