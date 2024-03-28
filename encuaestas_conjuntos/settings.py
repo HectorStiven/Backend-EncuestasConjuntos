@@ -103,18 +103,18 @@ DATABASES = {
 
 
 
-# Resto de la configuración de Django...
+# # Resto de la configuración de Django...
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': ENCUESTAS_DB_NAME,
-        'USER': ENCUESTAS_DB_USER,
-        'PASSWORD': ENCUESTAS_DB_PASSWORD,
-        'HOST': ENCUESTAS_DB_HOST,
-        'PORT': ENCUESTAS_DB_PORT,
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': ENCUESTAS_DB_NAME,
+#         'USER': ENCUESTAS_DB_USER,
+#         'PASSWORD': ENCUESTAS_DB_PASSWORD,
+#         'HOST': ENCUESTAS_DB_HOST,
+#         'PORT': ENCUESTAS_DB_PORT,
+#     }
+# }
 
 
 # DATABASES = {
