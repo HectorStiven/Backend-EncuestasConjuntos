@@ -1,7 +1,7 @@
 from rest_framework import generics
 from django.shortcuts import render
 from estudiantes.models import T002DatosCasa ,T007TiposDeCasa,T003DatosConjunto,T004Personas,T005TipoAsistencia,T006TipoEncuesta,T001Encuesta
-from estudiantes.serializers.estudiantes_serializers import T002DatosCasaSerializer ,T007TiposDeCasaSerializer,T003DatosConjuntoSerializer,T004PersonasSerializer,T005TipoAsistenciaSerializer,T006TipoEncuestaSerializer,T001EncuestaSerializer
+from estudiantes.serializers.estudiantes_serializers import T002DatosCasaSerializer ,T007TiposDeCasaSerializer,T003DatosConjuntoSerializer,T004PersonasSerializer,T005TipoAsistenciaSerializer,T006TipoEncuestaSerializer,T001EncuestaSerializer,T001EncuestaSerializer_p
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import ValidationError,NotFound,PermissionDenied
@@ -141,7 +141,7 @@ class ActualizarT003DatosConjuntoVista(generics.UpdateAPIView):
         serializer.is_valid(raise_exception=True)  # Valida los datos
         serializer.save()  # Guarda los datos
 
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response({'success': True, 'detail': 'Registro actualizado correctamente', 'data': serializer.data}, status=status.HTTP_200_OK)
 
 
 
@@ -297,7 +297,7 @@ class CrearT001EncuestaVista(generics.CreateAPIView):
 
 class ListarT001EncuestaVista(generics.ListAPIView):
     queryset = T001Encuesta.objects.all()
-    serializer_class = T001EncuestaSerializer
+    serializer_class = T001EncuestaSerializer_p
 
     def get(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
