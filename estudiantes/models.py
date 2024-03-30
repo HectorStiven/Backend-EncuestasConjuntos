@@ -40,6 +40,10 @@ class T004Personas(models.Model):
     T004nombre = models.CharField(max_length=255, null=False)
     T004cc = models.CharField(max_length=255)
     T004correo = models.CharField(max_length=255)
+    T004direccion = models.CharField(max_length=255, null=True)  # Campo para la dirección
+    T004activo = models.BooleanField(default=False)  # Campo para indicar si está activo o no
+    T004coeficiente = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # Campo tipo decimal para el coeficiente
+    T004genero = models.CharField(max_length=20, null=True)  # Campo para el género
 
     class Meta:
         db_table = 'T004Personas'
